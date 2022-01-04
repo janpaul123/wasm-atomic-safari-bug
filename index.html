@@ -1,5 +1,8 @@
 <script>
-    new Worker("worker.js");
+    const worker = new Worker("worker.js");
+    worker.onmessage = (event) => {
+        document.body.appendChild(document.createTextNode(event.data));
+    };
 </script>
 
 See README.md!
